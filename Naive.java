@@ -1,24 +1,7 @@
-public class Sliding {
+public class Naive {
 
     public static void main(String[] args) {
-        String[] configs = {
-            "12364-785", // 12346-785   1 diff
-                         // 123456-78   3 diffs
-                         // 1234567-8   
-                         // 12345678-   
-            "12368457-", // 12346857-   2 diffs
-                         // 12345687-   2 diffs
-                         // 12345678-   1 diff
-            "15-328467", // 125-38467   2 diffs
-                         // 1235-8467   1 diff
-                         // 12345-867   2 diffs
-                         // 123456-87   1 diff
-                         // 1234567-8   1 diffs
-                         // 12345678- 
-            "15328467",  // 2+1+2+1+1
-            "57814623-",
-            "357248-61"
-        };
+        String[] configs = { "12364-785", "12368457-", "15-328467", "57814623-", "357248-61" };
 
         for (String config : configs)
             System.out.println(isSolvable(config) ? "Solvable." : "Not Solvable.");

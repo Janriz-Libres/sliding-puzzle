@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SlidingPuzzle {
+public class ModifiedMergeSort {
 
     // Function to count the number of inversions
     // during the merge process
