@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class InversionCount {
 
@@ -63,7 +64,14 @@ public class InversionCount {
     }
 
     public static void main(String[] args) {
-        String[] configs = { "12364-785", "12368457-", "15-328467", "57814623-", "357248-61" };
+        //String[] configs = { "12364-785", "12368457-", "15-328467", "57814623-", "357248-61" };
+
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        String configs[] = new String[num];
+        for(int i = 0; i < num; i++){
+            configs[i] = scan.next();
+        }
 
         for (String config : configs) {
             String[] chars = config.split("");
@@ -80,6 +88,8 @@ public class InversionCount {
             }
 
             System.out.println(isSolvable(conf) ? "Solvable." : "Not Solvable.");
+
+            scan.close();
         }
     }
 }
