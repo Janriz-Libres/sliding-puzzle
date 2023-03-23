@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ModifiedMergeSort {
+public class InversionCount {
 
     // Function to count the number of inversions during the merge process
     private static int mergeAndCount(int[] arr, int l, int m, int r) {
@@ -57,9 +57,9 @@ public class ModifiedMergeSort {
     }
 
     private static boolean isSolvable(int[] conf) {
-        int cnt = mergeSortAndCount(conf, 0, conf.length - 1);
-        System.out.println("\nInversion count: " + cnt);
-        return cnt % 2 == 0;
+        int inversions = mergeSortAndCount(conf, 0, conf.length - 1);
+        System.out.println("\nInversion count: " + inversions);
+        return inversions % 2 == 0;
     }
 
     public static void main(String[] args) {
