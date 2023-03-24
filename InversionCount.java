@@ -1,8 +1,5 @@
 import java.util.Arrays;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class InversionCount {
 
@@ -23,7 +20,6 @@ public class InversionCount {
                 arr[k++] = left[i++];
                 continue;
             }
-
             arr[k++] = right[j++];
             swaps += (m + 1) - (l + i);
         }
@@ -68,53 +64,15 @@ public class InversionCount {
         return mergeSortAndCount(conf, 0, conf.length - 1) % 2 == 0;
     }
 
-    // A utility function for checking duplicate integers in an instance of a puzzle
-    public static boolean hasDuplicates(String str) {
-        Map<String, Long> map = Arrays.stream(str.split(""))
-            .collect(Collectors.groupingBy(Function.identity(), 
-                    Collectors.counting()));
-        return map.values().stream().anyMatch(count -> count >= 2);
-    }
-
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int num;
-        
-        // Error handling
-        try {
-            num = scan.nextInt();
-        } catch (Exception e) {
-            System.out.println("Invalid input.");
-            scan.close();
-            return;
-        }
-
-        // Exit program immediately if number of test cases is negative
-        if (num < 0) {
-            System.out.println("Only nonnegative integers allowed.");
-            scan.close();
-            return;
-        }
-
+        int num = scan.nextInt();
         scan.nextLine();
         String configs[] = new String[num];
 
         // Take configurations as input and check for any invalid inputs
-        for(int i = 0; i < num; i++) {
+        for(int i = 0; i < num; i++)
             configs[i] = scan.nextLine();
-
-            if (configs[i].length() != 9 || !configs[i].matches("\\d*-\\d*")) {
-                System.out.println("Invalid input.");
-                scan.close();
-                return;
-            }
-
-            if (hasDuplicates(configs[i])) {
-                System.out.println("Repeating integers are not allowed.");
-                scan.close();
-                return;
-            }
-        }
 
         System.out.println();
         scan.close();
@@ -124,8 +82,8 @@ public class InversionCount {
         for (String config : configs) {
             String[] chars = config.split("");
             int[] conf = new int[config.length() - 1];
-
             int idx = 0;
+
             for (int i = 0; i < chars.length; i++) {
                 try {
                     conf[idx] = Integer.parseInt(chars[i]);
