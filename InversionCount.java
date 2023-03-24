@@ -57,9 +57,7 @@ public class InversionCount {
     }
 
     private static boolean isSolvable(int[] conf) {
-        int inversions = mergeSortAndCount(conf, 0, conf.length - 1);
-        System.out.println("\nInversion count: " + inversions);
-        return inversions % 2 == 0;
+        return mergeSortAndCount(conf, 0, conf.length - 1) % 2 == 0;
     }
 
     public static void main(String[] args) {
