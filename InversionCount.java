@@ -70,7 +70,7 @@ public class InversionCount {
         scan.nextLine();
         String configs[] = new String[num];
 
-        // Take configurations as input and check for any invalid inputs
+        // Take configurations as input
         for(int i = 0; i < num; i++)
             configs[i] = scan.nextLine();
 
